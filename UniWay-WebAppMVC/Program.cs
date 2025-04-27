@@ -1,3 +1,5 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 namespace UniWay_WebAppMVC
 {
     public class Program
@@ -5,6 +7,8 @@ namespace UniWay_WebAppMVC
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.AddDbContext<SQLServerContextJJM>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("SQLServerContextJJM") ?? throw new InvalidOperationException("Connection string 'SQLServerContextJJM' not found.")));
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
