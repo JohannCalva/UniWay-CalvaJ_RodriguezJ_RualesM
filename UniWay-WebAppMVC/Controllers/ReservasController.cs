@@ -48,7 +48,7 @@ namespace UniWay_WebAppMVC.Controllers
         // GET: Reservas/Create
         public IActionResult Create()
         {
-            ViewData["PasajeroId"] = new SelectList(_context.Usuario, "Id", "Contrasena");
+            ViewData["PasajeroId"] = new SelectList(_context.Usuario, "Id", "Nombre");
             ViewData["ViajeId"] = new SelectList(_context.Viaje, "Id", "Destino");
             return View();
         }
@@ -66,7 +66,7 @@ namespace UniWay_WebAppMVC.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PasajeroId"] = new SelectList(_context.Usuario, "Id", "Contrasena", reserva.PasajeroId);
+            ViewData["PasajeroId"] = new SelectList(_context.Usuario, "Id", "Nombre", reserva.PasajeroId);
             ViewData["ViajeId"] = new SelectList(_context.Viaje, "Id", "Destino", reserva.ViajeId);
             return View(reserva);
         }
@@ -84,7 +84,7 @@ namespace UniWay_WebAppMVC.Controllers
             {
                 return NotFound();
             }
-            ViewData["PasajeroId"] = new SelectList(_context.Usuario, "Id", "Contrasena", reserva.PasajeroId);
+            ViewData["PasajeroId"] = new SelectList(_context.Usuario, "Id", "Nombre", reserva.PasajeroId);
             ViewData["ViajeId"] = new SelectList(_context.Viaje, "Id", "Destino", reserva.ViajeId);
             return View(reserva);
         }
@@ -121,7 +121,7 @@ namespace UniWay_WebAppMVC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PasajeroId"] = new SelectList(_context.Usuario, "Id", "Contrasena", reserva.PasajeroId);
+            ViewData["PasajeroId"] = new SelectList(_context.Usuario, "Id", "Nombre", reserva.PasajeroId);
             ViewData["ViajeId"] = new SelectList(_context.Viaje, "Id", "Destino", reserva.ViajeId);
             return View(reserva);
         }

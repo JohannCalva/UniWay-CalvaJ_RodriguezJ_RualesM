@@ -20,6 +20,6 @@ namespace UniWay_WebAppMVC.Models
         public string Placa { get; set; }
         public int ConductorId { get; set; }
         [ForeignKey("ConductorId")]
-        public Usuario Conductor { get; set; }
+        public Usuario? Conductor { get; set; }
     }
 }

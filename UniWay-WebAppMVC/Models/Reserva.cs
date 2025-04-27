@@ -15,9 +15,9 @@ namespace UniWay_WebAppMVC.Models
         public string MetodoPago { get; set; }
         public int ViajeId { get; set; }
         [ForeignKey("ViajeId")]
-        public Viaje Viaje { get; set; }
+        public Viaje? Viaje { get; set; }
         public int PasajeroId { get; set; }
         [ForeignKey("PasajeroId")]
-        public Usuario Pasajero { get; set; }
+        public Usuario? Pasajero { get; set; }
     }
 }

@@ -47,7 +47,7 @@ namespace UniWay_WebAppMVC.Controllers
         // GET: Vehiculos/Create
         public IActionResult Create()
         {
-            ViewData["ConductorId"] = new SelectList(_context.Usuario, "Id", "Contrasena");
+            ViewData["ConductorId"] = new SelectList(_context.Usuario, "Id", "Nombre");
             return View();
         }
 
@@ -64,7 +64,7 @@ namespace UniWay_WebAppMVC.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ConductorId"] = new SelectList(_context.Usuario, "Id", "Contrasena", vehiculo.ConductorId);
+            ViewData["ConductorId"] = new SelectList(_context.Usuario, "Id", "Nombre", vehiculo.ConductorId);
             return View(vehiculo);
         }
 
@@ -81,7 +81,7 @@ namespace UniWay_WebAppMVC.Controllers
             {
                 return NotFound();
             }
-            ViewData["ConductorId"] = new SelectList(_context.Usuario, "Id", "Contrasena", vehiculo.ConductorId);
+            ViewData["ConductorId"] = new SelectList(_context.Usuario, "Id", "Nombre", vehiculo.ConductorId);
             return View(vehiculo);
         }
 
@@ -117,7 +117,7 @@ namespace UniWay_WebAppMVC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ConductorId"] = new SelectList(_context.Usuario, "Id", "Contrasena", vehiculo.ConductorId);
+            ViewData["ConductorId"] = new SelectList(_context.Usuario, "Id", "Nombre", vehiculo.ConductorId);
             return View(vehiculo);
         }
 
