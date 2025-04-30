@@ -47,7 +47,7 @@ namespace UniWay_WebAppMVC.Controllers
         // GET: Viajes/Create
         public IActionResult Create()
         {
-            ViewData["ConductorId"] = new SelectList(_context.Usuario, "Id", "Nombre");
+            ViewData["ConductorId"] = new SelectList(_context.Usuario.Where(u => u.EsConductor), "Id", "Nombre");
             return View();
         }
 
