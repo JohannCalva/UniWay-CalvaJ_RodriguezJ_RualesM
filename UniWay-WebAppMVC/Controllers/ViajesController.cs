@@ -64,7 +64,7 @@ namespace UniWay_WebAppMVC.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ConductorId"] = new SelectList(_context.Usuario, "Id", "Nombre", viaje.ConductorId);
+            ViewData["ConductorId"] = new SelectList(_context.Usuario.Where(u => u.EsConductor), "Id", "Nombre", viaje.ConductorId);
             return View(viaje);
         }
 
