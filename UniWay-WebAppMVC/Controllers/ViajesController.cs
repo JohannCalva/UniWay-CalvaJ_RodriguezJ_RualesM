@@ -47,7 +47,7 @@ namespace UniWay_WebAppMVC.Controllers
         // GET: Viajes/Create
         public IActionResult Create()
         {
-            ViewData["ConductorId"] = new SelectList(_context.Usuario, "Id", "Nombre");
+            ViewData["ConductorId"] = new SelectList(_context.Usuario.Where(u => u.EsConductor), "Id", "Nombre");
             return View();
         }
 
@@ -64,7 +64,7 @@ namespace UniWay_WebAppMVC.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ConductorId"] = new SelectList(_context.Usuario, "Id", "Nombre", viaje.ConductorId);
+            ViewData["ConductorId"] = new SelectList(_context.Usuario.Where(u => u.EsConductor), "Id", "Nombre", viaje.ConductorId);
             return View(viaje);
         }
 

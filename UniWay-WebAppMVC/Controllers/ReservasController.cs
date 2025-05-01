@@ -49,6 +49,7 @@ namespace UniWay_WebAppMVC.Controllers
         public IActionResult Create()
         {
             ViewData["PasajeroId"] = new SelectList(_context.Usuario, "Id", "Nombre");
+            
             ViewData["ViajeId"] = new SelectList(_context.Viaje, "Id", "Destino");
             return View();
         }
