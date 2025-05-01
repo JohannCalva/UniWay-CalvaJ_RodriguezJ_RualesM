@@ -6,6 +6,7 @@
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+    background-color: #f9f9f9;
 }
 
 footer {
@@ -16,8 +17,18 @@ footer {
 h1, .title {
     font-weight: 700;
 }
+.titulo, .mensaje {
+    color: black; 
+    font-size: 36px;
+    font-family: "Inter", sans-serif;
+}
+
 
 .btn-primary {
     background-color: #A60F46;
     border-color: #8C0436;
+}
+.btn-secondary {
+    background-color: #555;
+    border-color: #555;
 }

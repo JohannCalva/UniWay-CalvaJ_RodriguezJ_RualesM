@@ -1,8 +1,112 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Inicio";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Bienvenido a UniWay!</h1>
-    <p>Comienza tu aventura ahora...</p>
-</div>
+<main>
+    <!-- Carrusel principal con opciones distintas de usuario y conductor -->
+    <div id="myCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/lib/mapa.png" class="d-block w-100" alt="Viaje Seguro">
+                <div class="container">
+                    <div class="carousel-caption text-start">
+                        <h1 class="titulo">Bienvenido a UniWay</h1>
+                        <p class="mensaje">Tu forma segura y eficiente de moverte por la ciudad.</p>
+                        <p><a class="btn btn-lg btn-primary" href="/Viajes/Create">Agenda un viaje</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/lib/redcar.jpg" class="d-block w-100" alt="Conduce con UniWay">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>¿Tienes auto?</h1>
+                        <p>Únete como conductor y genera ingresos.</p>
+                        <p><a class="btn btn-lg btn-secondary" href="/Usuarios/RegisterDriver">Hazte conductor</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Buscador -->
+    <div class="container mb-5">
+        <div class="input-group">
+            <input type="text" id="destino" class="form-control" placeholder="¿A dónde quieres ir?" />
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                Opciones
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#" onclick="seleccionarDestino('UDLA Park')">UDLA Park</a></li>
+                <li><a class="dropdown-item" href="#" onclick="seleccionarDestino('UDLA Granados')">UDLA Granados</a></li>
+                <li><a class="dropdown-item" href="#" onclick="seleccionarDestino('UDLA Arena')">UDLA Arena</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+function seleccionarDestino(lugar) {
+    document.getElementById('destino').value = lugar;
+}
+</script>
+    
+    <!-- Lugares guardados -->
+    <div class="container mb-4">
+        <h4>Lugares guardados</h4>
+        <ul class="list-group">
+            <li class="list-group-item">🏠 Casa - Av. América y Naciones Unidas</li>
+            <li class="list-group-item">🏫 Campus Granados - Av. de los Granados</li>
+        </ul>
+    </div>
+
+    <!-- Accesos rápidos -->
+    <div class="container mb-5">
+        <h4>Sugerencias</h4>
+        <div class="row text-center">
+            <div class="col-md-3 mb-3">
+                <a href="/Viajes/Index" class="btn btn-outline-primary w-100">
+                    <i class="bi bi-bus-front"></i> Viajes
+                </a>
+            </div>
+            <div class="col-md-3 mb-3">
+                <a href="/Reservas/Edit" class="btn btn-outline-secondary w-100">
+                    <i class="bi bi-person"></i> Usuarios
+                </a>
+            </div>
+            <div class="col-md-3 mb-3">
+                <a href="/Reservas/Create" class="btn btn-outline-dark w-100">
+                    <i class="bi bi-calendar-check"></i> Reservas
+                </a>
+            </div>
+            <div class="col-md-3 mb-3">
+                <a href="/Usuarios/RegisterDriver" class="btn btn-outline-danger w-100">
+                    <i class="bi bi-car-front"></i> Vehículos
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tarjetas adicionales -->
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">📅 Agenda un viaje</h5>
+                        <p class="card-text">Programa un viaje y ahorra tiempo</p>
+                        <a href="/Viajes/Create" class="btn btn-primary">Agendar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">🚗 ¿Tienes auto?</h5>
+                        <p class="card-text">Regístrate para ser conductor y ganar dinero</p>
+                        <a href="/Usuarios/RegisterDriver" class="btn btn-secondary">Unirme</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
