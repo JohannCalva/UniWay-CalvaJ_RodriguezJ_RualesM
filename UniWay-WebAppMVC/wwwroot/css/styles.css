@@ -18,7 +18,6 @@ h1, .title {
     font-weight: 700;
 }
 .titulo, .mensaje {
-    color: black; 
     font-size: 36px;
     font-family: "Inter", sans-serif;
 }
@@ -31,4 +30,28 @@ h1, .title {
 .btn-secondary {
     background-color: #555;
     border-color: #555;
+}
+.logo {
+    width: 25px;
+    height: auto;
+}
+
+.way {
+    color: #A60F46;
+}
+
+#carousel {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+.caption-bg {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
 }
